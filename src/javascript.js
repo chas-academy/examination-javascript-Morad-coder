@@ -17,7 +17,7 @@ function addTransaction(type) {
     const description = descriptionInput.value.trim();
     const amount = parseFloat(amountInput.value);
 
-    if (description === "" || isNaN(amount) || amount <= 0) {
+    if (!description || isNaN(amount) || amount <= 0) {
         alert("Vänligen fyll i både beskrivning och ett belopp större än 0.");
         return;
     }
@@ -65,6 +65,13 @@ function updateUI() {
     totalBalance.textContent = (totalIncome - totalExpense).toFixed(2);
 }
 
-// Event listeners
-addIncomeBtn.addEventListener('click', () => addTransaction("income"));
-addExpenseBtn.addEventListener('click', () => addTransaction("expense"));
+// Event listeners - säkerställer att de läggs till EN gång
+if (!addIncomeBtn.hasListener) {
+    addIncomeBtn.addEventListener('click', () => addTransaction("income"));
+    addIncomeBtn.hasListener = true;
+}
+
+if (!addExpenseBtn.hasListener) {
+    addExpenseBtn.addEventListener('click', () => addTransaction("expense"));
+    addExpenseBtn.hasListener = true;
+}

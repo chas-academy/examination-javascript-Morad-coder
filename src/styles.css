@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #f0f4f8; /* ljus bakgrund */
+  background-color: #f9f9f9;
 }
 
 input {
   margin: 5px;
   padding: 6px;
-  border: 1px solid #bbb;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
@@ -17,13 +17,13 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #28a745; /* grön knapp */
+  background-color: #0077cc;
   color: white;
   font-size: 14px;
 }
 
 button:hover {
-  background-color: #218838; /* mörkare grön vid hover */
+  background-color: #005fa3;
 }
 
 ul {
@@ -36,15 +36,15 @@ li {
 }
 
 .income {
-  color: #1e7e34; /* djupare grön för inkomster */
+  color: green;
   font-weight: bold;
 }
 
 .expense {
-  color: #c82333; /* röd för utgifter */
+  color: red;
   font-weight: bold;
 }
 
 h1, h2 {
-  color: #2c3e50; /* mörkgrå/blå rubriker */
+  color: #333;
 }
