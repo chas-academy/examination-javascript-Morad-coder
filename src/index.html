@@ -8,19 +8,31 @@
   <script src="javascript.js" defer></script>
 </head>
 <body>
-  <h1>Inkomst och Utgift Tracker</h1>
+  <header>
+    <h1>Inkomst och Utgift Tracker</h1>
+  </header>
 
-  <input type="text" id="description" placeholder="Beskrivning">
-  <input type="number" id="amount" placeholder="Belopp">
-  <button id="addIncome">Lägg till inkomst</button>
-  <button id="addExpense">Lägg till utgift</button>
+  <main>
+    <section id="input-section">
+      <input type="text" id="description" placeholder="Beskrivning">
+      <input type="number" id="amount" placeholder="Belopp">
+      <button id="addIncome">Lägg till inkomst</button>
+      <button id="addExpense">Lägg till utgift</button>
+    </section>
 
-  <h2>Inkomster</h2>
-  <ul id="incomeList"></ul>
+    <section id="income-section">
+      <h2>Inkomster</h2>
+      <ul id="incomeList"></ul>
+    </section>
 
-  <h2>Utgifter</h2>
-  <ul id="expenseList"></ul>
+    <section id="expense-section">
+      <h2>Utgifter</h2>
+      <ul id="expenseList"></ul>
+    </section>
 
-  <h2>Total saldo: <span id="totalBalance">0</span> kr</h2>
+    <section id="balance-section">
+      <h2>Total saldo: <span id="totalBalance">0</span> kr</h2>
+    </section>
+  </main>
 </body>
 </html>

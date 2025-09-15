@@ -17,16 +17,16 @@ function addTransaction(type) {
     const description = descriptionInput.value.trim();
     const amount = parseFloat(amountInput.value);
 
-    if(description === "" || isNaN(amount)) {
-        alert("Vänligen fyll i både beskrivning och belopp.");
+    if (description === "" || isNaN(amount) || amount <= 0) {
+        alert("Vänligen fyll i både beskrivning och ett belopp större än 0.");
         return;
     }
 
     const transaction = { description, amount, type };
 
-    if(type === "income") {
+    if (type === "income") {
         incomes.push(transaction);
-    } else if(type === "expense") {
+    } else if (type === "expense") {
         expenses.push(transaction);
     }
 
@@ -46,7 +46,7 @@ function updateUI() {
     // Visa inkomster
     incomes.forEach(trans => {
         const li = document.createElement('li');
-        li.textContent = `${trans.description}: ${trans.amount} kr`;
+        li.textContent = `${trans.description}: ${trans.amount.toFixed(2)} kr`;
         li.classList.add('income');
         incomeList.appendChild(li);
     });
@@ -54,7 +54,7 @@ function updateUI() {
     // Visa utgifter
     expenses.forEach(trans => {
         const li = document.createElement('li');
-        li.textContent = `${trans.description}: ${trans.amount} kr`;
+        li.textContent = `${trans.description}: ${trans.amount.toFixed(2)} kr`;
         li.classList.add('expense');
         expenseList.appendChild(li);
     });
@@ -62,7 +62,7 @@ function updateUI() {
     // Beräkna total saldo
     const totalIncome = incomes.reduce((sum, trans) => sum + trans.amount, 0);
     const totalExpense = expenses.reduce((sum, trans) => sum + trans.amount, 0);
-    totalBalance.textContent = totalIncome - totalExpense;
+    totalBalance.textContent = (totalIncome - totalExpense).toFixed(2);
 }
 
 // Event listeners
