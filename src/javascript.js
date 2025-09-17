@@ -65,13 +65,6 @@ function updateUI() {
     totalBalance.textContent = (totalIncome - totalExpense).toFixed(2);
 }
 
-// Event listeners - säkerställer att de läggs till EN gång
-if (!addIncomeBtn.hasListener) {
-    addIncomeBtn.addEventListener('click', () => addTransaction("income"));
-    addIncomeBtn.hasListener = true;
-}
-
-if (!addExpenseBtn.hasListener) {
-    addExpenseBtn.addEventListener('click', () => addTransaction("expense"));
-    addExpenseBtn.hasListener = true;
-}
+// Event listeners
+addIncomeBtn.addEventListener('click', () => addTransaction("income"));
+addExpenseBtn.addEventListener('click', () => addTransaction("expense"));
