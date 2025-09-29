@@ -1,43 +1,82 @@
-
 <!DOCTYPE html>
+
 <html lang="sv">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inkomst och Utgift Tracker</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="javascript.js" defer></script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Budget- och utgiftskoll</title>
+
 </head>
+
 <body>
-  <header>
-    <h1>Inkomst och Utgift Tracker</h1>
-  </header>
 
-  <main>
-    <!-- Input-sektion -->
-    <section id="input-section">
-      <input type="text" id="description" placeholder="Beskrivning">
-      <input type="number" id="amount" placeholder="Belopp">
-      <button id="addIncome">Lägg till inkomst</button>
-      <button id="addExpense">Lägg till utgift</button>
-    </section>
+<h1>Budget- och utgiftskoll</h1>
 
-    <!-- Inkomster -->
-    <section id="income-section">
-      <h2>Inkomster</h2>
-      <ul id="incomeList"></ul>
-    </section>
 
-    <!-- Utgifter -->
-    <section id="expense-section">
-      <h2>Utgifter</h2>
-      <ul id="expenseList"></ul>
-    </section>
 
-    <!-- Total saldo -->
-    <section id="balance-section">
-      <h2>Total saldo: <span id="totalBalance">0.00</span> kr</h2>
-    </section>
-  </main>
+<div class="input-form">
+
+<div>
+
+<label for="description">Beskrivning:</label>
+
+<input type="text" id="description" placeholder="Ex: Lön, Mat, Hyra">
+
+</div>
+
+<div>
+
+<label for="amount">Belopp (kr):</label>
+
+<input type="number" id="amount" placeholder="Ex: 500">
+
+</div>
+
+
+<button id="addIncomeBtn">Lägg till Inkomst</button>
+
+<button id="addExpenseBtn">Lägg till Utgift</button>
+
+</div>
+
+
+
+<div class="balance-container">
+
+<h2>Saldo: <span id="balance">0.00</span> kr</h2>
+
+</div>
+
+
+
+<div class="lists-container">
+
+<div class="list-column">
+
+<h2>Inkomster</h2>
+
+<ul id="incomeList"></ul>
+
+</div>
+
+<div class="list-column">
+
+<h2>Utgifter</h2>
+
+<ul id="expenseList"></ul>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
